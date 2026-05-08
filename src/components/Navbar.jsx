@@ -52,7 +52,7 @@ export default function Navbar({ onOpenForm, onOpenEngagements }) {
         <a href="#destinations" className="mobile-link" onClick={() => scrollTo('destinations')}>Destinations</a>
         <a href="#" className="mobile-link" onClick={(e) => { e.preventDefault(); onOpenEngagements?.(); setMobileOpen(false) }}>Engagements</a>
         <a href="#testimonials" className="mobile-link" onClick={() => scrollTo('testimonials')}>Témoignages</a>
-        <a href="#" className="btn-nav" onClick={(e) => { e.preventDefault(); onOpenForm?.() }}>✨ Planifier</a>
+        <a href="#" className="btn-nav" onClick={(e) => { e.preventDefault(); onOpenForm?.(); setMobileOpen(false) }}>✨ Planifier</a>
       </div>
     </>
   )
