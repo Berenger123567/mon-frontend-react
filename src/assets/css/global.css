@@ -433,7 +433,7 @@ body.show-form #form-page { display: flex; }
   .timeline-content { flex: 1; padding-left: 20px; order: 2; } .timeline-image { display: none; }
   .timeline-badge { position: absolute; left: 0; top: 0; width: 55px; height: 55px; margin-bottom: 0; }
   .timeline-badge i { font-size: 1.2rem; } .timeline-badge .timeline-number { width: 24px; height: 24px; font-size: 0.8rem; }
-  .timeline-text { padding: 0; box-shadow: none; background: transparent; } .timeline-text::before { display: none; } .timeline-text h3 { font-size: 1.1rem; }
+  .timeline-text { padding: 0; box-shadow: none; background: transparent; } .timeline-text::before { display: none; } .timeline-text h3 { font-size: 1.1rem; color: var(--blanc); } .timeline-text p { color: var(--blanc); } .timeline-details li { color: var(--blanc); }
   .price-content { flex-direction: column; gap: 0.5rem; } .why-choose-grid { grid-template-columns: 1fr; } .why-choose-text { padding: 2rem; }
   .navbar { width: 95%; padding: 0.8rem 1.5rem; } .hero-section { min-height: 600px; } .hero-badge { padding: 0.5rem 1.2rem; font-size: 0.75rem; } .cta-section { padding: 3rem; }
   .form-page-content { width: 100%; opacity: 1; }
@@ -464,7 +464,7 @@ body.show-form #form-page { display: flex; }
   .timeline-content { flex: 1; padding-left: 20px; order: 2; } .timeline-image { order: 3; display: none; }
   .timeline-badge { position: absolute; left: 0; top: 0; width: 48px; height: 48px; margin-bottom: 0; }
   .timeline-badge i { font-size: 1.1rem; } .timeline-badge .timeline-number { width: 22px; height: 22px; font-size: 0.75rem; top: -5px; right: -5px; }
-  .timeline-text { padding: 0; box-shadow: none; background: transparent; } .timeline-text::before { display: none; } .timeline-text h3 { font-size: 1.05rem; margin-bottom: 0.6rem; } .timeline-text p { font-size: 0.88rem; margin-bottom: 0.8rem; }
+  .timeline-text { padding: 0; box-shadow: none; background: transparent; } .timeline-text::before { display: none; } .timeline-text h3 { font-size: 1.05rem; margin-bottom: 0.6rem; color: var(--blanc); } .timeline-text p { font-size: 0.88rem; margin-bottom: 0.8rem; color: var(--blanc); } .timeline-details li { color: var(--blanc); }
   .timeline-details { flex-wrap: wrap; gap: 0.4rem; } .timeline-details li { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
   .why-choose-text { padding: 1.5rem; } .price-block { padding: 2rem 1.5rem; } .price-label { font-size: 1.5rem; } .btn-price-cta { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
   .cta-section { padding: 2rem 1.5rem; } .btn-whatsapp-cta { padding: 0.9rem 1.8rem; font-size: 0.9rem; } .cta-subtext { font-size: 1rem; }
@@ -495,8 +495,8 @@ body.show-form #form-page { display: flex; }
   .process-timeline::before { left: 20px; } .process-timeline { padding-left: 5px; }
   .timeline-step, .timeline-step.step_right { padding: 1.2rem 0; } .timeline-badge { width: 42px; height: 42px; }
   .timeline-badge i { font-size: 0.95rem; } .timeline-badge .timeline-number { width: 20px; height: 20px; font-size: 0.7rem; }
-  .timeline-text h3 { font-size: 0.95rem; } .timeline-text p { font-size: 0.82rem; }
-  .timeline-details li { font-size: 0.72rem; padding: 0.25rem 0.5rem; }
+  .timeline-text h3 { font-size: 0.95rem; color: var(--blanc); } .timeline-text p { font-size: 0.82rem; color: var(--blanc); }
+  .timeline-details li { font-size: 0.72rem; padding: 0.25rem 0.5rem; color: var(--blanc); }
   .price-content { flex-direction: column; text-align: center; } .intro-stats { flex-wrap: wrap; justify-content: center; }
   #backHome { top: 8px; padding: 6px 14px; font-size: 0.75rem; }
   .form-card { padding: 0.8rem; width: 100%; margin: 5px auto 0; border-radius: var(--radius-md); }
