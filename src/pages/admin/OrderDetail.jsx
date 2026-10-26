@@ -256,6 +256,17 @@ export default function OrderDetail() {
             )}
           </div>
 
+                    {order.needs && order.needs.length > 0 && (
+            <div style={{ marginTop: "1rem" }}>
+              <strong style={{ display: "block", marginBottom: "0.5rem" }}>Besoins pour ce voyage :</strong>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                {order.needs.map((need, idx) => (
+                  <span key={idx} className="order-tag">{need}</span>
+                ))}
+              </div>
+            </div>
+          )}
+
           {order.activities && order.activities.length > 0 && (
             <div style={{ marginTop: "1rem" }}>
               <strong style={{ display: "block", marginBottom: "0.5rem" }}>Activités recherchées :</strong>

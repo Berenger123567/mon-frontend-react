@@ -53,6 +53,21 @@ const DESTINATION_OPTIONS = [
   { value: 'campagne', emoji: '🌿', label: 'Campagne' },
   { value: 'ile', emoji: '🏝️', label: 'Île' }
 ]
+
+const NEED_OPTIONS = [
+  { value: 'vols', emoji: '✈️', label: 'Recherche de vols' },
+  { value: 'logement', emoji: '🏨', label: 'Sélection de logement' },
+  { value: 'activites', emoji: '🎯', label: "Suggestions d'activités" },
+  { value: 'restaurants', emoji: '🍽️', label: 'Suggestions de restaurants' }
+]
+
+const NEED_LABELS = {
+  vols: 'Recherche de vols',
+  logement: 'Sélection de logement',
+  activites: "Suggestions d'activités",
+  restaurants: 'Suggestions de restaurants'
+}
+
 const ACTIVITY_OPTIONS = [
   { value: 'aventure', emoji: '🧗', label: 'Aventure' },
   { value: 'culture', emoji: '🏛️', label: 'Culture' },
@@ -110,6 +125,7 @@ const INITIAL_FORM_DATA = {
   budget: '',
   destination_type: [],
   activities: [],
+  needs: [],
   climate: '',
   hebergement: '',
   alimentation: [],
@@ -213,6 +229,7 @@ export default function TravelForm({ isOpen, onClose, callbacks }) {
       if (isAdding) {
         if (field === 'destination_type') callbacks?.syncDestinationType(value)
         if (field === 'activities') callbacks?.syncActivities(value)
+        if (field === 'needs') callbacks?.syncNeeds?.(value)
         if (field === 'alimentation') callbacks?.syncAlimentation(value)
         if (field === 'feelings') callbacks?.syncFeelings(value)
       }
@@ -281,6 +298,7 @@ export default function TravelForm({ isOpen, onClose, callbacks }) {
       climate: CLIMATE_LABELS[formData.climate] || formData.climate || '',
       travel_style: formData.objectif || '',
       activities: formData.activities || [],
+      needs: formData.needs.map(n => NEED_LABELS[n] || n),
       accommodation: HEBERGEMENT_LABELS[formData.hebergement] || formData.hebergement || '',
       food: formData.alimentation.join(', ') || '',
       feelings: formData.feelings.join(', ') || '',
@@ -427,7 +445,21 @@ export default function TravelForm({ isOpen, onClose, callbacks }) {
             </div>
 
             <div className={`form-step${currentStep === 3 ? ' active-step' : ''}`} data-step="3">
-              <h3><i className="fas fa-hotel"></i> Votre confort</h3>
+              <h3><i className="fas fa-hotel"></i> Votre confort & besoins</h3>
+
+              <div className="form-group">
+                <label>Vos besoins pour ce voyage</label>
+                <div className="options-grid">
+                  {NEED_OPTIONS.map(opt => (
+                    <div className="option-item" key={opt.value}>
+                      <input type="checkbox" name="needs" value={opt.value} id={`need-${opt.value}`}
+                        checked={formData.needs.includes(opt.value)}
+                        onChange={() => toggleArrayField('needs', opt.value)} />
+                      <label htmlFor={`need-${opt.value}`}>{opt.emoji} {opt.label}</label>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <div className="form-group">
                 <label>Type d'hébergement</label>
